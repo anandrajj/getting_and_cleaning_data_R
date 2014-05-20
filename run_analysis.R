@@ -67,15 +67,15 @@ read_subject <- function(subjectfile="y_test.txt") {
 run_analysis <- function(){
     
     #format Train data set
-    dfs_train <- read_subject("subject_train.txt")
-    dfv_train <- assign_col_names("X_train.txt","features.txt")
-    dfa_train <- get_descriptive_act_name("activity_labels.txt","y_train.txt")
+    dfs_train <- read_subject("train/subject_train.txt")
+    dfv_train <- assign_col_names("train/X_train.txt","features.txt")
+    dfa_train <- get_descriptive_act_name("activity_labels.txt","train/y_train.txt")
     train <- cbind(dfs_train,dfa_train,dfv_train)
     
     #format Test data set
-    dfs_test <- read_subject("subject_test.txt")
-    dfv_test <- assign_col_names("X_test.txt","features.txt") 
-    dfa_test <- get_descriptive_act_name("activity_labels.txt","y_test.txt")
+    dfs_test <- read_subject("test/subject_test.txt")
+    dfv_test <- assign_col_names("test/X_test.txt","features.txt") 
+    dfa_test <- get_descriptive_act_name("activity_labels.txt","test/y_test.txt")
     test <- cbind(dfs_test,dfa_test,dfv_test)
     
     #merge test & train data sets
